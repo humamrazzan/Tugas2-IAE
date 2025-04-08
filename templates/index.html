@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Data Mahasiswa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        .input-field {
+            @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400;
+        }
+        .btn {
+            @apply py-2 px-4 rounded-lg text-white transition-all duration-200;
+        }
+        .btn-primary {
+            @apply bg-blue-500 hover:bg-blue-600;
+        }
+        .btn-danger {
+            @apply bg-red-500 hover:bg-red-600;
+        }
+        .card {
+            @apply bg-white shadow-md rounded-lg p-4 mb-4;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-indigo-100 min-h-screen py-10">
+
+    <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8 animate__animated animate__fadeInDown">
+            📚 Data Mahasiswa
+        </h1>
+
+        <div class="card animate__animated animate__fadeInUp">
+            <form id="form-mahasiswa">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input type="text" id="nama" class="input-field" placeholder="Nama Lengkap" required>
+                    <input type="text" id="nim" class="input-field" placeholder="NIM" required>
+                    <input type="text" id="jurusan" class="input-field" placeholder="Jurusan" required>
+                </div>
+                <button class="btn btn-primary w-full mt-4">➕ Tambah Mahasiswa</button>
+            </form>
+        </div>
+
+        <div id="daftar-mahasiswa" class="mt-8 space-y-3 animate__animated animate__fadeInUp"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
